@@ -1,5 +1,12 @@
-#!/usr/bin/node
+const http = require("http");
 
-for(let i = 0; i<10; i++){
-    console.log(i*100);
-}
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {"name": "jagx"});
+    res.end(
+        JSON.stringify({
+            data: "Hello World!"
+        })
+    );
+});
+
+server.listen(3000);
